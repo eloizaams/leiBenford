@@ -1,0 +1,251 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: #333;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    width: 90vw;
+    height: 90vw;
+    max-width: 900px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #0d16bb;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+main p {
+    font-size: 1.2em;
+    color: #555;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.separador {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.separador label {
+    font-size: 1em;
+    color: #333;
+    margin-right: 10px;
+}
+
+#separador {
+    width: 100%;
+    max-width: 200px;
+    height: 35px;
+    padding: 5px;
+    background-color: #f7f4f2;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.caixa_texto {
+    margin: 20px auto;
+    text-align: center;
+}
+
+textarea {
+    padding: 10px;
+    height: 150px;
+    width: 90%;
+    max-width: 600px;
+    color: #333;
+    border-radius: 4px;
+    margin-top: 15px;
+    background-color: #f7f4f2;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+#contagem {
+    margin: 20px auto;
+    font-size: 1em;
+    color: #0d16bb;
+    text-align: center;
+}
+
+.button {
+    margin: 20px auto;
+    font-size: 18px;
+    padding: 12px 24px;
+    text-align: center;
+}
+
+#btn_grafico,
+#btn_clear,
+#btn_download,
+#btn_aleatorio {
+    background-color: #1e90ff;
+    padding: 10px 20px;
+    border-style: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+}
+
+#btn_download {
+    background-color: #28a745; /* Cor verde para o botão de download */
+}
+
+#btn_grafico:hover,
+#btn_clear:hover,
+#btn_download:hover,
+#btn_aleatorio:hover {
+    opacity: 80%;
+}
+
+.btn {
+    display: none; /* Ocultar inicialmente */
+    background-color: #56b4ac;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px auto;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+}
+
+/* Exemplo de como tornar o botão visível quando necessário */
+.btn.show {
+    display: inline-flexblock;
+}
+
+#barra {
+    width: 50%;
+    max-width: 600px;
+    height: 25px;
+    background-color: #f7f4f2;
+    border-radius: 10px;
+    margin: 10px auto;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+}
+
+#progress {
+    width: 0;
+    height: 100%;
+    background-color: #0d16bb;
+    border-radius: 10px;
+}
+
+/* Estilos para a caixa de diálogo personalizada */
+.custom_alert {
+    display: none; /* Inicialmente escondida */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Para garantir que fique acima de outros elementos */
+}
+
+.custom_alert_content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.custom_alert_content button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custom_alert_content button:hover {
+    background-color: #0d16bb;
+}
+
+#grafico {
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+#grafico canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Animação da borda */
+@keyframes border-blink {
+    0% {
+        border-color: #77d17a;
+    }
+    50% {
+        border-color: #f5ed05;
+    }
+    100% {
+        border-color: #77d17a;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 540px) {
+    body {
+        font-size: 14px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    textarea {
+        height: 100px;
+        width: 95%;
+    }
+
+    #barra {
+        width: 95%;
+    }
+
+    #btn,
+    #btn_clear {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .separador {
+        font-size: 16px;
+    }
+
+    #separador {
+        width: 100%;
+    }
+}

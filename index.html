@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Gráfico</title>
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Lei de Benford</h1>
+            </header>
+            <main>
+                <p>
+                    Digite no mínimo 50 números aleatórios para validar a Lei de
+                    Benford
+                </p>
+                <div class="separador">
+                    <label for="separador">Caractere separador:</label>
+                    <select name="separador" id="separador">
+                        <option value="espaco">Espaço</option>
+                        <option value="enter">Enter</option>
+                    </select>
+                </div>
+                <div class="caixa_texto">
+                    <textarea
+                        name="texto"
+                        id="texto"
+                        placeholder="Digite os números aqui..."
+                    >
+                    </textarea>
+                </div>
+                <div id="contagem"></div>
+                <div id="barra">
+                    <div id="progress"></div>
+                </div>
+                <div class="button">
+                    <button id="btn_grafico">Gráfico</button>
+                    <button id="btn_clear">Limpar</button>
+                    <button id="btn_download"></button>
+                    <button id="btn_aleatorio">Gerar números aleatórios</button>
+                </div>
+
+                <div id="customAlert" class="custom_alert">
+                    <div class="custom_alert_content">
+                        <span id="customAlertMessage"></span>
+                        <button id="customAlertButton">OK</button>
+                    </div>
+                </div>
+
+                <div id="grafico">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </main>
+        </div>
+        <script src="js/chart.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
