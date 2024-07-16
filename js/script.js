@@ -52,9 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const numeroAleatorio = Math.floor(Math.random() * 50) + 1; // Gera números de 1 a 50
             numeros.push(numeroAleatorio);
         }
-        separador === "Espaço"
-            ? (textarea.value = numeros.join(" "))
-            : (textarea.value = numeros.join("\n"));
+        textarea.value = numeros.join(separador === "espaco" ? " " : "\n");
     }
 
     function showDownloadButton() {
@@ -86,12 +84,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     textarea.addEventListener("input", (event) => {
         const separador = separadorSelect.value;
-        // Remove qualquer caractere que não seja um número ou espaço
-        textarea.value = textarea.value.replace(/[^0-9\s]/g, "");
 
-        // Se o separador for "enter", substitui os espaços por quebras de linha
-        if (separador === "enter") {
-            textarea.value = textarea.value.replace(/\s+/g, "\n"); // Troca espaços múltiplos por quebras de linha
+        // Validação: Remove espaços se o separador for "enter" e vice-versa
+        if (separador === "espaco") {
+            textarea.value = textarea.value.replace(/\n/g, ""); // Remove quebras de linha
+        } else if (separador === "enter") {
+            textarea.value = textarea.value.replace(/\s+/g, "\n"); // Substitui espaços por quebras de linha
+        }
+
+        // Remove qualquer caractere que não seja um número ou o separador
+        if (separador === "espaco") {
+            textarea.value = textarea.value.replace(/[^0-9\s]/g, ""); // Remove caracteres inválidos
+        } else if (separador === "enter") {
+            textarea.value = textarea.value.replace(/[^0-9\n]/g, ""); // Remove caracteres inválidos
         }
     });
 
